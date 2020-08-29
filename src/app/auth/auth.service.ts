@@ -50,7 +50,6 @@ export class AuthService {
   }
 
   public isAuthenticated(): boolean {
-    console.log(this.decodedToken.exp);
     return moment().isBefore(moment.unix(this.decodedToken.exp));
   }
 }
