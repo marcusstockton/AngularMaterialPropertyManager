@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import * as moment from 'moment';
+import {LoginDto} from '../models/loginDto';
+import {UserResponseDto} from '../models/userResponseDto';
 
 const jwt = new JwtHelperService();
 
@@ -28,7 +30,7 @@ export class AuthService {
     return this.http.post(URI, userData);
   }
 
-  public login(userData: any): Observable<any> {
+  public login(userData: LoginDto): Observable<UserResponseDto> {
     const URI = environment.baseUrl + '/Auth/authenticate';
     return this.http.post(URI, userData).pipe(map(token => {
       return this.saveToken(token);

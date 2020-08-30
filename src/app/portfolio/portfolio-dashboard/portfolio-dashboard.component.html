@@ -1,4 +1,8 @@
 <p>portfolio-dashboard works!</p>
-<p *ngFor="let item of data">
-    {{item.name}}
-</p>
+<div *ngFor="let item of data">
+    <p>{{item.name}}</p>
+    <p>{{item.createdDateTime | date:'medium'}}</p>
+    <p>{{item.id}}</p>
+    <p>{{item.owner.firstName}}</p>
+    <hr />
+</div>
