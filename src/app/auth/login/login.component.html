@@ -1,35 +1,34 @@
-<mat-card>
-  <mat-card-content>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <h2>Log In</h2>
-      <span *ngIf="errors.length > 0">
-      <mat-error *ngFor = "let error of errors">
-        {{ error }}
-      </mat-error>
-      </span>
-      <p>
-      <mat-form-field class="full-width-input">
-        <input matInput placeholder="Username" formControlName="username" required>
-        <mat-error>
-          Please provide a valid username
-        </mat-error>
-      </mat-form-field>
-      </p>
-      <p>
-      <mat-form-field class="full-width-input">
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
-        <mat-error>
-          Please provide a valid password
-        </mat-error>
-      </mat-form-field>
-      </p>
-      <p>
-      <button mat-raised-button color="primary">Login</button>
-      </p>
-    </form>
-  </mat-card-content>
-</mat-card>
-
+  <mat-card fxFlex="3 3 calc(15em + 20px)">
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h2>Log In</h2>
+        <span *ngIf="errors.length > 0">
+          <mat-error *ngFor="let error of errors">
+            {{ error }}
+          </mat-error>
+        </span>
+        <p>
+          <mat-form-field class="full-width-input">
+            <input matInput placeholder="Username" formControlName="username" required>
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="full-width-input">
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+            <mat-error>
+              Please provide a valid password
+            </mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+          <button mat-raised-button color="primary">Login</button>
+        </p>
+      </form>
+    </mat-card-content>
+  </mat-card>
 
 <!--div class="container">
     <div class="row">

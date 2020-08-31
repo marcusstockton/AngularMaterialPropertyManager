@@ -11,11 +11,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthInterceptor } from './auth.interceptor';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
   declarations: [
-    RegisterComponent, 
+    RegisterComponent,
     LoginComponent
   ],
   imports: [
@@ -26,10 +28,12 @@ import { AuthInterceptor } from './auth.interceptor';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
-    AuthService, 
+    AuthService,
     AuthGuard
   ]
 

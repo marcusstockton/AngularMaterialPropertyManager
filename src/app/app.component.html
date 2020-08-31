@@ -1,14 +1,15 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" display="flex">
   <mat-toolbar-row>
-    
-    <h1>SimpleCRM</h1>
+    <h1>Property Manager 1.0</h1>
     <span class="menu-spacer"></span>
     <div>
-      <a mat-button [routerLink]="'/portfolio'"> Portfolios </a>
+      <a mat-button [routerLink]="'/portfolio'" routerLinkActive="active"> Portfolios </a>
     </div>
-    <div class="menu-spacer">
-      <a mat-button [routerLink]="'/auth/login'"> Login </a>
-      <a mat-button [routerLink]="'/auth/register'"> Register </a>
+    <span class="example-spacer"></span>
+    
+    <div>
+      <a mat-button [routerLink]="'/auth/login'" routerLinkActive="active">Login</a>
+      <a mat-button [routerLink]="'/auth/register'" routerLinkActive="active"> Register</a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
