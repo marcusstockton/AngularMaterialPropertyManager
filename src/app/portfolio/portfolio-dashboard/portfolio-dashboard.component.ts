@@ -19,7 +19,7 @@ export class PortfolioDashboardComponent implements OnInit {
 
   getPortfolios() {
     // Move this into a service
-    const URI = environment.baseUrl + '/Portfolios'
+    const URI = environment.baseUrl + '/Portfolios';
     this.http.get(URI).subscribe((res: PortfolioDetailDto[]) => {
       this.data = res;
     }, (err) => {
