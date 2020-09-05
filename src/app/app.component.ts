@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { UserDto } from './models/userDto';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,9 @@ import { UserDto } from './models/userDto';
 })
 export class AppComponent implements OnInit {
   title = 'AngularPropertyManagerMaterial';
-  isLoggedIn: boolean;
-  constructor(private authService: AuthService) { 
-    this.isLoggedIn = this.authService.isAuthenticated();
+  isLoggedIn: Observable<boolean>;
+  constructor(private authService: AuthService) {
+    this.isLoggedIn = authService.isLoggedIn();
   }
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
   
   logout(){
     this.authService.logout();
-    this.isLoggedIn = false;
   }
+
+
 }

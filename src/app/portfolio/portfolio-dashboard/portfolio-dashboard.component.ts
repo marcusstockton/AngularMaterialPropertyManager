@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { PortfolioService } from '../../portfolio/portfolio.service';
 import {PortfolioDetailDto} from '../../models/portfolioDetailDto';
 
 @Component({
@@ -10,21 +9,14 @@ import {PortfolioDetailDto} from '../../models/portfolioDetailDto';
 })
 export class PortfolioDashboardComponent implements OnInit {
   data: PortfolioDetailDto[] = [];
-  constructor(private http: HttpClient) { }
+  constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
-    this.getPortfolios();
-  }
-
-
-  getPortfolios() {
-    // Move this into a service
-    const URI = environment.baseUrl + '/Portfolios';
-    this.http.get(URI).subscribe((res: PortfolioDetailDto[]) => {
-      this.data = res;
-    }, (err) => {
-      alert(err);
+    this.portfolioService.getPortfolios().subscribe(x => {
+      this.data = x;
     });
-
   }
+
+
+
 }

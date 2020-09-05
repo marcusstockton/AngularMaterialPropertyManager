@@ -1,9 +1,8 @@
 export class UserResponseDto {
-        
-    // TOKEN
-    public token: string = null;
-    // FIRSTNAME
-    public firstName: string = null;
-    // LASTNAME
-    public lastName: string = null;
+    public token: string;
+    public firstName: string;
+    public lastName: string;
+    public username: string;
+    public dateOfBirth: Date;
+    public emailAddress: string;
 }
