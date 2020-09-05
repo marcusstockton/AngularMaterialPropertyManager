@@ -52,13 +52,15 @@ import { MatTableModule } from '@angular/material/table';
 import { PortfolioDashboardComponent } from './portfolio/portfolio-dashboard/portfolio-dashboard.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PortfolioListItemComponent } from './portfolio/portfolio-list-item/portfolio-list-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    PortfolioDashboardComponent
+    PortfolioDashboardComponent,
+    PortfolioListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../../portfolio/portfolio.service';
-import {PortfolioDetailDto} from '../../models/portfolioDetailDto';
+import { PortfolioListItemDto } from 'src/app/models/PortfolioListItemDto';
 
 @Component({
   selector: 'app-portfolio-dashboard',
@@ -8,7 +8,7 @@ import {PortfolioDetailDto} from '../../models/portfolioDetailDto';
   styleUrls: ['./portfolio-dashboard.component.scss']
 })
 export class PortfolioDashboardComponent implements OnInit {
-  data: PortfolioDetailDto[] = [];
+  data: PortfolioListItemDto[] = [];
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {

@@ -1,10 +1,7 @@
 <p>portfolio-dashboard works!</p>
 <span *ngIf="data">
-    <div *ngFor="let item of data">
-        <p>{{item.name}}</p>
-        <p>{{item.createdDateTime | date:'medium'}}</p>
-        <p>{{item.id}}</p>
-        <p>{{item.owner?.firstName}}</p>
-        <hr />
-    </div>
+    <span *ngFor="let item of data">
+        <app-portfolio-list-item [portfolio]="item"></app-portfolio-list-item>
+    </span>
+    
 </span>

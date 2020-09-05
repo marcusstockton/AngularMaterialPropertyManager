@@ -25,6 +25,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
     this.decodedToken = JSON.parse(localStorage.getItem('APM_auth_meta')) || new DecodedToken();
+    this.isLoginSubject.next(this.isAuthenticated());
   }
 
   public register(userData: any): Observable<any> {
