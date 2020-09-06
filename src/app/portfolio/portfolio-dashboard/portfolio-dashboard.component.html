@@ -1,7 +1,7 @@
 <p>portfolio-dashboard works!</p>
-<span *ngIf="data">
-    <span *ngFor="let item of data">
-        <app-portfolio-list-item [portfolio]="item"></app-portfolio-list-item>
-    </span>
+
+<mat-list role="list" *ngFor="let item of data">
     
-</span>
+        <app-portfolio-list-item [portfolio]="item"></app-portfolio-list-item>
+    
+</mat-list>

@@ -1,7 +1,5 @@
-<p>portfolio-list-item works!</p>
-<p>{{portfolio.name}}</p>
-<p>{{portfolio.createdDateTime | date:'medium'}}</p>
-<p>{{portfolio.id}}</p>
-<p>{{portfolio.owner?.firstName}}</p>
-<p>{{portfolio.propertyCount}}</p>
-<hr />
+<mat-list-item (click)="goToPortfolio()">
+    <h3 matLine> <mat-label>Name: </mat-label>{{portfolio.name}} </h3>
+    <p matLine><mat-label>Created: </mat-label>{{portfolio.createdDateTime | date:'medium'}} </p>
+    <p matLine class="demo-2"><mat-label># Properties: </mat-label>{{portfolio.propertyCount}} </p>
+  </mat-list-item>

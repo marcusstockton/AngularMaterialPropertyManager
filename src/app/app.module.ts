@@ -53,6 +53,8 @@ import { PortfolioDashboardComponent } from './portfolio/portfolio-dashboard/por
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PortfolioListItemComponent } from './portfolio/portfolio-list-item/portfolio-list-item.component';
+import { PortfolioDetailComponent } from './portfolio/portfolio-detail/portfolio-detail.component';
+import { PortfolioFormComponent } from './portfolio/portfolio-form/portfolio-form.component';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { PortfolioListItemComponent } from './portfolio/portfolio-list-item/port
     AppComponent,
     AuthComponent,
     PortfolioDashboardComponent,
-    PortfolioListItemComponent
+    PortfolioListItemComponent,
+    PortfolioDetailComponent,
+    PortfolioFormComponent
   ],
   imports: [
     BrowserModule,

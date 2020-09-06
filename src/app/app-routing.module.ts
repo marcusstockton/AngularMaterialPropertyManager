@@ -5,6 +5,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PortfolioDashboardComponent } from './portfolio/portfolio-dashboard/portfolio-dashboard.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PortfolioDetailComponent } from './portfolio/portfolio-detail/portfolio-detail.component';
+import { PortfolioFormComponent } from './portfolio/portfolio-form/portfolio-form.component';
 
 const routes: Routes = [
   {
@@ -15,7 +17,14 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent }
     ]
   }, {
-    path: 'portfolio', component: PortfolioDashboardComponent, canActivate: [AuthGuard]
+    path: 'portfolio',
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: PortfolioDashboardComponent },
+      { path: 'create', component: PortfolioFormComponent },
+      { path: ':id', component: PortfolioDetailComponent },
+      { path: ':id/edit', component: PortfolioFormComponent }
+    ]
   }
 ];
 
