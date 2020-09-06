@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { PortfolioListItemDto } from '../models/PortfolioListItemDto';
 import { PortfolioDetailDto } from '../models/portfolioDetailDto';
+import { PortfolioCreateDto } from '../models/portfolioCreate';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -29,5 +30,15 @@ export class PortfolioService {
         return data;
       })
     );
+  }
+
+  public updatePortfolio(portfolioId: string, data: PortfolioDetailDto): Observable<any>{
+    const URI = environment.baseUrl + `/Portfolios/${portfolioId}`;
+    return this.http.put(URI, data);
+  }
+
+  public createPortfolio(data: PortfolioCreateDto): Observable<any>{
+    const URI = environment.baseUrl + '/Portfolios/';
+    return this.http.post(URI, data);
   }
 }

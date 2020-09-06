@@ -55,6 +55,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PortfolioListItemComponent } from './portfolio/portfolio-list-item/portfolio-list-item.component';
 import { PortfolioDetailComponent } from './portfolio/portfolio-detail/portfolio-detail.component';
 import { PortfolioFormComponent } from './portfolio/portfolio-form/portfolio-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { PortfolioFormComponent } from './portfolio/portfolio-form/portfolio-for
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AuthModule,
     HttpClientModule,
     MatAutocompleteModule,
