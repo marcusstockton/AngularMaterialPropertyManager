@@ -24,7 +24,7 @@ export class PortfolioService {
   }
 
   public getPortfolioById(portfolioId: string): Observable<PortfolioDetailDto>{
-    const URI = environment.baseUrl + '/Portfolios/' + portfolioId;
+    const URI = environment.baseUrl + '/Portfolios/GetPortfolioAndProperties/' + portfolioId;
     return this.http.get(URI).pipe(
       map((data: PortfolioDetailDto) => {
         return data;
