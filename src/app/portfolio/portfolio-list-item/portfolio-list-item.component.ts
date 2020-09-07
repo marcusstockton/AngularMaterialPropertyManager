@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PortfolioListItemDto } from 'src/app/models/PortfolioListItemDto';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PortfolioListItemDto } from '../models/PortfolioListItemDto';
 
 @Component({
   selector: 'app-portfolio-list-item',

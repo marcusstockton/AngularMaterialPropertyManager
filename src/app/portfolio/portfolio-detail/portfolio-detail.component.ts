@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
-import { PortfolioDetailDto } from 'src/app/models/portfolioDetailDto';
+import { PortfolioDetailDto } from 'src/app/portfolio/models/portfolioDetailDto';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

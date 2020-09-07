@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../../portfolio/portfolio.service';
-import { PortfolioListItemDto } from 'src/app/models/PortfolioListItemDto';
+import { PortfolioListItemDto } from 'src/app/portfolio/models/PortfolioListItemDto';
 
 @Component({
   selector: 'app-portfolio-dashboard',

@@ -1,5 +1,5 @@
-import { UserDto } from "./userDto";
-import { PropertyDetailDto } from "./propertyDetailDto";
+import { UserDto } from "../../models/userDto";
+import { PropertyDetailDto } from "../../models/propertyDetailDto";
 
 export class PortfolioDetailDto {
         

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { PortfolioDetailDto } from 'src/app/models/portfolioDetailDto';
+import { PortfolioDetailDto } from 'src/app/portfolio/models/portfolioDetailDto';
 import { PortfolioService } from '../portfolio.service';
-import { PortfolioCreateDto } from 'src/app/models/portfolioCreate';
+import { PortfolioCreateDto } from 'src/app/portfolio/models/portfolioCreate';
 
 @Component({
   selector: 'app-portfolio-form',

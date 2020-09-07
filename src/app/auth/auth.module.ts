@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AuthInterceptor } from './auth.interceptor';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -25,17 +26,11 @@ import {MatNativeDateModule} from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     // HttpClientModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    MaterialModule
   ],
   providers: [
     AuthService,
     AuthGuard
   ]
-
 })
 export class AuthModule { }

@@ -18,13 +18,8 @@ const routes: Routes = [
     ]
   }, {
     path: 'portfolio',
+    loadChildren: () => import('./portfolio/portfolio.module').then(x => x.PortfolioModule),
     canActivate: [AuthGuard],
-    children: [
-      { path: '', component: PortfolioDashboardComponent },
-      { path: 'create', component: PortfolioFormComponent },
-      { path: ':id', component: PortfolioDetailComponent },
-      { path: ':id/edit', component: PortfolioFormComponent }
-    ]
   }
 ];
 

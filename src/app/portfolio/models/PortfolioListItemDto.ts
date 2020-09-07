@@ -1,4 +1,4 @@
-import {UserDto} from "./userDto";
+import { UserDto } from "../../models/userDto";
 
 export class PortfolioListItemDto {
     public id: string;
