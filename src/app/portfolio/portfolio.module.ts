@@ -7,7 +7,7 @@ import { PortfolioDashboardComponent } from './portfolio-dashboard/portfolio-das
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule, Routes } from '@angular/router';
-
+import {PropertyModule} from '../property/property.module';
 
 const routes: Routes = [
   { path: '', component: PortfolioDashboardComponent },
@@ -27,7 +27,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    PropertyModule
   ]
 })
 export class PortfolioModule { }

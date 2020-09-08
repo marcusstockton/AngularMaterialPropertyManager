@@ -5,7 +5,10 @@
     <h2>{{portfolio?.name}}</h2>
     <p><small>Created on {{portfolio?.createdDateTime | date:'medium' }}</small></p>
     <p><small *ngIf="portfolio?.updatedDateTime">Updated on {{portfolio?.updatedDateTime | date:'medium' }}</small></p>
+    <a mat-raised-button [routerLink]="['/portfolio/',portfolio.id, 'edit']">Edit</a>
 
-    <a [routerLink]="['/portfolio/',portfolio.id, 'edit']">Edit</a>
+    <app-property-dashboard [properties] = "portfolio.properties"></app-property-dashboard>
+
+
 </div>
 

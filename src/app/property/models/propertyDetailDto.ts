@@ -1,4 +1,4 @@
-import { Tenant_DetailDto } from "./tenantDetailDto";
+import { Tenant_DetailDto } from "../../models/tenantDetailDto";
 
 export class PropertyDetailDto {
         

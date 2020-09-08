@@ -24,9 +24,12 @@ const routes: Routes = [
     PropertyFormComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
+    //RouterModule.forChild(routes),
     ReactiveFormsModule,
     MaterialModule
+  ],
+  exports:[
+    PropertyDashboardComponent
   ]
 })
 export class PropertyModule { }
