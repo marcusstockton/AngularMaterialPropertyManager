@@ -9,10 +9,10 @@ import { MaterialModule } from '../material/material.module';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: PropertyDashboardComponent },
+  // { path: '', pathMatch: 'full', component: PropertyDashboardComponent },
   { path: 'create', component: PropertyFormComponent },
-  { path: ':id', component: PropertyDetailComponent },
-  { path: ':id/edit', component: PropertyFormComponent }
+  { path: 'view/:id', component: PropertyDetailComponent },
+  { path: 'edit/:id', component: PropertyFormComponent }
 ];
 
 
@@ -28,8 +28,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     MaterialModule
   ],
-  exports:[
-    PropertyDashboardComponent
+  exports: [
+    PropertyDashboardComponent,
+    //RouterModule
   ]
 })
 export class PropertyModule { }

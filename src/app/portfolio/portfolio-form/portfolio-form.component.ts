@@ -20,7 +20,7 @@ export class PortfolioFormComponent implements OnInit {
       name: new FormControl(''),
     });
 
-    this.portfolioId = this.activatedRoute.snapshot.params.id;
+    this.portfolioId = this.activatedRoute.snapshot.params.portfolioid;
     // We have an id? Go get the data, this is an update.
 
     if (this.portfolioId !== '') {

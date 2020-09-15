@@ -22,14 +22,14 @@ import { MaterialModule } from './material/material.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
     FlexLayoutModule,
     AuthModule,
-    PortfolioModule
+    PortfolioModule,
+    AppRoutingModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

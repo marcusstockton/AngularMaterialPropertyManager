@@ -19,7 +19,7 @@ export class PortfolioDetailComponent implements OnInit {
     private portfolioService: PortfolioService,
     private _snackBar: MatSnackBar
   ) {
-    this.portfolioId = this.activatedRoute.snapshot.params.id;
+    this.portfolioId = this.activatedRoute.snapshot.params.portfolioid;
 
     this.isloading = true;
     this.portfolioService.getPortfolioById(this.portfolioId).subscribe(res => {

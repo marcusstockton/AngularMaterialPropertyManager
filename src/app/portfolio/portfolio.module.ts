@@ -12,8 +12,10 @@ import {PropertyModule} from '../property/property.module';
 const routes: Routes = [
   { path: '', component: PortfolioDashboardComponent },
   { path: 'create', component: PortfolioFormComponent },
-  { path: ':id', component: PortfolioDetailComponent },
-  { path: ':id/edit', component: PortfolioFormComponent }
+  // { path: 'view/:portfolioid/properties', pathMatch:"full", loadChildren: () => import('../property/property.module').then(x => x.PropertyModule), runGuardsAndResolvers: 'always'}, 
+  { path: 'view/:portfolioid', component: PortfolioDetailComponent },
+  { path: 'edit/:portfolioid',  component: PortfolioFormComponent },
+  
 ];
 
 @NgModule({
@@ -29,6 +31,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     MaterialModule,
     PropertyModule
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class PortfolioModule { }

@@ -2,6 +2,9 @@ import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { PropertyDetailDto } from '../models/PropertyDetailDto';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router, ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-property-dashboard',
@@ -12,16 +15,20 @@ export class PropertyDashboardComponent implements AfterViewInit {
 
   @Input() properties: PropertyDetailDto[];
   @ViewChild(MatSort) sort: MatSort;
+  private portfolioId: string;
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'noOfBeds', 'propertyValue', 'rentalPrice', 'description', 'noTenants'];
 
-  constructor() { }
+  constructor(private router: Router, route: ActivatedRoute) {
+    this.portfolioId = route.snapshot.params.portfolioid;
+  }
 
   ngAfterViewInit(): void {
     this.dataSource = new MatTableDataSource(this.properties);
     this.dataSource.sort = this.sort;
   }
-  getProperty(property: PropertyDetailDto){
-    alert("PropertyId clicked: " + property.id);
+
+  getProperty(property: PropertyDetailDto): void{
+    this.router.navigate([`/portfolio/view/${this.portfolioId}/properties/view/${property.id}`]);
   }
 }

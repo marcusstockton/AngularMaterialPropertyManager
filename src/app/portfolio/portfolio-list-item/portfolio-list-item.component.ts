@@ -15,9 +15,4 @@ export class PortfolioListItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  goToPortfolio(): void{
-    // this.router.navigateByUrl(`/${this.portfolio.id}`, { relativeTo: this.route });
-    this.router.navigate([`./${this.portfolio.id}`], { relativeTo: this.route });
-  }
 }
