@@ -1,4 +1,5 @@
-<mat-list-item [routerLink]="['./view/', portfolio.id]">
+
+<mat-list-item [routerLink]="[portfolio.id]">
     <h3 matLine> <mat-label>Name: </mat-label>{{portfolio.name}} </h3>
     <p matLine><mat-label>Created: </mat-label>{{portfolio.createdDateTime | date:'medium'}} </p>
     <p matLine class="demo-2"><mat-label># Properties: </mat-label>{{portfolio.propertyCount}} </p>

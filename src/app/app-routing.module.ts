@@ -13,13 +13,14 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent }
     ]
-  }, {
-    path: 'portfolio',
+  },
+  {
+    path: '',
     loadChildren: () => import('./portfolio/portfolio.module').then(x => x.PortfolioModule),
     canActivate: [AuthGuard],
   },
   {
-    path: 'portfolio/view/:portfolioid/properties',
+    path: 'portfolio/:portfolioid',
     loadChildren: () => import('./property/property.module').then(x => x.PropertyModule),
     canActivate: [AuthGuard],
   }

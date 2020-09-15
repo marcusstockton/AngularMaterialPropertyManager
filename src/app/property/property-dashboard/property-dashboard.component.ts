@@ -29,6 +29,6 @@ export class PropertyDashboardComponent implements AfterViewInit {
   }
 
   getProperty(property: PropertyDetailDto): void{
-    this.router.navigate([`/portfolio/view/${this.portfolioId}/properties/view/${property.id}`]);
+    this.router.navigate([`/portfolio/${this.portfolioId}/properties/${property.id}`]);
   }
 }

@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PortfolioModule } from './portfolio/portfolio.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
+import { PropertyModule } from './property/property.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MaterialModule } from './material/material.module';
     FlexLayoutModule,
     AuthModule,
     PortfolioModule,
+    PropertyModule,
     AppRoutingModule,
   ],
   providers: [

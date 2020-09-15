@@ -1,14 +1,10 @@
-<p>portfolio-detail works!</p>
-
 <mat-spinner *ngIf="isloading"></mat-spinner>
 <div *ngIf="!isloading">
     <h2>{{portfolio?.name}}</h2>
     <p><small>Created on {{portfolio?.createdDateTime | date:'medium' }}</small></p>
     <p><small *ngIf="portfolio?.updatedDateTime">Updated on {{portfolio?.updatedDateTime | date:'medium' }}</small></p>
-    <a mat-raised-button [routerLink]="['/portfolio/edit/',portfolio.id, 'edit']">Edit</a>
+    <a mat-raised-button [routerLink]="['/portfolio/',portfolio.id, 'edit']">Edit</a>
 
     <app-property-dashboard [properties] = "portfolio.properties"></app-property-dashboard>
-    <!--router-outlet></router-outlet-->
-
 </div>
 

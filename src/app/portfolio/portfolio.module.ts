@@ -10,12 +10,16 @@ import { RouterModule, Routes } from '@angular/router';
 import {PropertyModule} from '../property/property.module';
 
 const routes: Routes = [
-  { path: '', component: PortfolioDashboardComponent },
-  { path: 'create', component: PortfolioFormComponent },
-  // { path: 'view/:portfolioid/properties', pathMatch:"full", loadChildren: () => import('../property/property.module').then(x => x.PropertyModule), runGuardsAndResolvers: 'always'}, 
-  { path: 'view/:portfolioid', component: PortfolioDetailComponent },
-  { path: 'edit/:portfolioid',  component: PortfolioFormComponent },
+  { path: 'portfolio', children:[
+    { path: '', component: PortfolioDashboardComponent },
+    { path: 'create', component: PortfolioFormComponent },
+    { path: ':portfolioid', component: PortfolioDetailComponent },
+    { path: ':portfolioid/edit',  component: PortfolioFormComponent },
+  ]},
   
+  // { path: ':portfolioid/properties', pathMatch:"full",
+  //   loadChildren: () => import('../property/property.module')
+  //     .then(x => x.PropertyModule), runGuardsAndResolvers: 'always'},
 ];
 
 @NgModule({

@@ -26,7 +26,7 @@ export class PortfolioDetailComponent implements OnInit {
       this.isloading = false;
       this.portfolio = res;
     }, (err) => {
-      _snackBar.open(err);
+      this._snackBar.open(err.message, null, {duration: 3000});
     });
   }
 

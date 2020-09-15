@@ -1,43 +1,36 @@
-
 <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort>
-  
-      <!-- id Column -->
-      <mat-text-column name="id"></mat-text-column>
-  
-      <!-- noOfBeds Column -->
-      <ng-container matColumnDef="noOfBeds">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> # Beds </th>
-        <td mat-cell *matCellDef="let property"> {{property.noOfBeds}} </td>
-      </ng-container>
-  
-      <!-- propertyValue Column -->
-      <ng-container matColumnDef="propertyValue">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Property Value </th>
-        <td mat-cell *matCellDef="let property"> {{property.propertyValue | currency:'GBP'}} </td>
-      </ng-container>
-  
-      <!-- rentalPrice Column -->
-      <ng-container matColumnDef="rentalPrice">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rental Price </th>
-        <td mat-cell *matCellDef="let property"> {{property.rentalPrice | currency:'GBP'}} </td>
-      </ng-container>
+  <table mat-table [dataSource]="dataSource" matSort>
 
-        <!-- description Column -->
-        <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
-            <td mat-cell *matCellDef="let property"> {{property.description}} </td>
-        </ng-container>
-  
-        <!-- description Column -->
-        <ng-container matColumnDef="noTenants">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> # Tenants </th>
-            <td mat-cell *matCellDef="let property"> {{property.tenants.length}} </td>
-        </ng-container>        
+    <mat-text-column name="id"></mat-text-column>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getProperty(row)"></tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  </div>
+    <ng-container matColumnDef="noOfBeds">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> # Beds </th>
+      <td mat-cell *matCellDef="let property"> {{property.noOfBeds}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="propertyValue">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Property Value </th>
+      <td mat-cell *matCellDef="let property"> {{property.propertyValue | currency:'GBP'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rentalPrice">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rental Price </th>
+      <td mat-cell *matCellDef="let property"> {{property.rentalPrice | currency:'GBP'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+      <td mat-cell *matCellDef="let property"> {{property.description}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="noTenants">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> # Tenants </th>
+      <td mat-cell *matCellDef="let property"> {{property.tenants.length}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getProperty(row)"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
