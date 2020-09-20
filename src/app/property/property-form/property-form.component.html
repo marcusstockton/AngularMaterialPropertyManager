@@ -1,1 +1,9 @@
 <p>property-form works!</p>
+<p>{{portfolioId}}</p>
+<div *ngIf="propertyId; else createForm">
+    Edit {{propertyId}}
+</div>
+
+<ng-template #createForm>
+    Create
+</ng-template>

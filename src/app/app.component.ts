@@ -10,15 +10,15 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'AngularPropertyManagerMaterial';
-  isLoggedIn: Observable<boolean>;
+  isLoggedIn: boolean;
   constructor(private authService: AuthService) {
-    this.isLoggedIn = authService.isLoggedIn();
+    this.isLoggedIn = authService.isAuthenticated();
   }
 
   ngOnInit(): void {
   }
-  
-  logout(){
+
+  logout(): void{
     this.authService.logout();
   }
 

@@ -9,10 +9,14 @@ import { PortfolioListItemDto } from 'src/app/portfolio/models/PortfolioListItem
 })
 export class PortfolioDashboardComponent implements OnInit {
   data: PortfolioListItemDto[] = [];
+  isloading = false;
+
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
+    this.isloading = true;
     this.portfolioService.getPortfolios().subscribe(x => {
+      this.isloading = false;
       this.data = x;
     });
   }

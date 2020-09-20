@@ -17,15 +17,17 @@ export class PropertyDashboardComponent implements AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   private portfolioId: string;
   dataSource = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'noOfBeds', 'propertyValue', 'rentalPrice', 'description', 'noTenants'];
+  displayedColumns: string[] = ['id', 'noOfBeds', 'propertyValue', 'rentalPrice', 'description', 'noTenants', 'purchaseDate', 'purchasePrice'];
 
   constructor(private router: Router, route: ActivatedRoute) {
     this.portfolioId = route.snapshot.params.portfolioid;
   }
 
   ngAfterViewInit(): void {
-    this.dataSource = new MatTableDataSource(this.properties);
-    this.dataSource.sort = this.sort;
+    if(this.properties.length > 0){
+      this.dataSource = new MatTableDataSource(this.properties);
+      this.dataSource.sort = this.sort;
+    }
   }
 
   getProperty(property: PropertyDetailDto): void{

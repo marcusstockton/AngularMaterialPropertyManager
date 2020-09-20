@@ -1,3 +1,5 @@
+<mat-spinner *ngIf="isloading"></mat-spinner>
+
 <mat-list role="list" *ngFor="let item of data">
         <app-portfolio-list-item [portfolio]="item"></app-portfolio-list-item>
 </mat-list>

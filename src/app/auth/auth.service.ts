@@ -21,49 +21,40 @@ class DecodedToken {
 export class AuthService {
   private decodedToken;
   user: UserResponseDto;
-  isLoginSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
+  // isLoginSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
 
   constructor(private http: HttpClient) {
-    this.decodedToken = JSON.parse(localStorage.getItem('APM_auth_meta')) || new DecodedToken();
-    this.isLoginSubject.next(this.isAuthenticated());
-  }
+    this.decodedToken = JSON.parse(localStorage.getItem('auth_meta')) || new DecodedToken();
+   }
 
   public register(userData: any): Observable<any> {
     const URI = environment.baseUrl + '/Auth/register';
     return this.http.post(URI, userData);
   }
 
-  public login(userData: LoginDto): Observable<UserResponseDto> {
+  public login(userData: any): Observable<any> {
     const URI = environment.baseUrl + '/Auth/authenticate';
-    return this.http.post(URI, userData).pipe(map((token: UserResponseDto) => {
-      this.user = token;
-      return this.saveToken(token.token);
+    return this.http.post(URI, userData).pipe(map(token => {
+      return this.saveToken(token);
     }));
   }
 
   private saveToken(token: any): any {
     this.decodedToken = jwt.decodeToken(token);
-    localStorage.setItem('APM_auth_tkn', token);
-    localStorage.setItem('APM_auth_meta', JSON.stringify(this.decodedToken));
-    this.isLoginSubject.next(true);
+    localStorage.setItem('auth_tkn', token);
+    localStorage.setItem('auth_meta', JSON.stringify(this.decodedToken));
     return token;
   }
 
   public logout(): void {
-    localStorage.removeItem('APM_auth_tkn');
-    localStorage.removeItem('APM_auth_meta');
-    this.isLoginSubject.next(false);
+    localStorage.removeItem('auth_tkn');
+    localStorage.removeItem('auth_meta');
+
     this.decodedToken = new DecodedToken();
   }
 
   public isAuthenticated(): boolean {
-    if (this.decodedToken) {
-      return moment().isBefore(moment.unix(this.decodedToken.exp));
-    }
-    return false;
-  }
-
-  isLoggedIn(): Observable<boolean> {
-    return this.isLoginSubject.asObservable();
+    console.log(this.decodedToken.exp);
+    return moment().isBefore(moment.unix(this.decodedToken.exp));
   }
 }

@@ -1,1 +1,45 @@
-<p>property-detail works!</p>
+<div fxLayout="row" fxLayoutAlign="space-around center">
+    <mat-card *ngIf="propertyDetails?.address" style="max-width: 200px;">
+        <mat-card-header>
+            <mat-card-title>Address</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{propertyDetails?.address?.line1}} {{propertyDetails?.address?.line2}}
+                {{propertyDetails?.address?.line3}}
+            </p>
+            <p>{{propertyDetails?.address?.postCode}} </p>
+            <p>{{propertyDetails?.address?.town}} </p>
+            <p>{{propertyDetails?.address?.city}}</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card style="max-width: 200px;">
+        <mat-card-header>
+            <mat-card-title>
+                Purchase Info
+            </mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</p>
+            <p>{{propertyDetails?.purchaseDate | date:'medium'}}</p>
+            <p>{{propertyDetails?.propertyValue| currency : 'GBP'}}</p>
+        </mat-card-content>
+    </mat-card>
+
+
+    <mat-card style="max-width: 200px;">
+        <mat-card-header>
+            <mat-card-title>
+                Details
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{propertyDetails?.description}}</p>
+            <p>{{propertyDetails?.noOfBeds}}</p>
+            <p>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</p>
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

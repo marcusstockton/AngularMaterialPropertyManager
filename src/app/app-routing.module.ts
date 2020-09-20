@@ -4,10 +4,15 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
+
+const portfolioModule = () => import('./portfolio/portfolio.module').then(x => x.PortfolioModule);
+const propertyModule = () => import('./property/property.module').then(x => x.PropertyModule);
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   {
-  path: 'auth',
+    path: 'auth',
     component: AuthComponent,
     children: [
       { path: 'login', component: LoginComponent },
@@ -15,19 +20,21 @@ const routes: Routes = [
     ]
   },
   {
-    path: '',
-    loadChildren: () => import('./portfolio/portfolio.module').then(x => x.PortfolioModule),
-    canActivate: [AuthGuard],
+    path: 'portfolios',
+    loadChildren: portfolioModule,
   },
   {
     path: 'portfolio/:portfolioid',
-    loadChildren: () => import('./property/property.module').then(x => x.PropertyModule),
     canActivate: [AuthGuard],
-  }
+    loadChildren: propertyModule,
+  },
+
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [AuthGuard]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-property-form',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyFormComponent implements OnInit {
 
-  constructor() { }
+  portfolioId: string;
+  propertyId: string;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      if (params) {
+        this.portfolioId = params.portfolioid;
+        this.propertyId = params.propertyid;
+      }
+    });
+  }
 
   ngOnInit(): void {
   }

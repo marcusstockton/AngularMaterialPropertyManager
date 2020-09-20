@@ -1,7 +1,10 @@
 <mat-toolbar color="primary" display="flex">
   <mat-toolbar-row>
-    <h1>Property Manager 1.0</h1>
+    <h1 [routerLink]="''" >Property Manager 1.0</h1>
     <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> Home </a>
+    </div>
     <div>
       <a mat-button [routerLink]="'/portfolio'" routerLinkActive="active"> Portfolios </a>
     </div>
