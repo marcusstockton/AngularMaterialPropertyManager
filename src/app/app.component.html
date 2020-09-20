@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" display="flex">
+<mat-toolbar color="primary">
   <mat-toolbar-row>
     <h1 [routerLink]="''" >Property Manager 1.0</h1>
     <span class="menu-spacer"></span>
@@ -10,11 +10,11 @@
     </div>
     <span class="example-spacer"></span>
     
-    <div *ngIf="!(isLoggedIn | async)">
+    <div *ngIf="!isLoggedIn">
       <a mat-button [routerLink]="'/auth/login'" routerLinkActive="active">Login</a>
       <a mat-button [routerLink]="'/auth/register'" routerLinkActive="active"> Register</a>
     </div>
-    <div *ngIf="(isLoggedIn | async)">
+    <div *ngIf="isLoggedIn">
       <a mat-icon-button [routerLink]="'/auth/login'" routerLinkActive="active" matTooltip="Account"><mat-icon >account_box</mat-icon></a>
       <a mat-icon-button (click)="logout()" matTooltip="Log Out"><mat-icon >exit_to_app</mat-icon></a>
     </div>

@@ -1,4 +1,4 @@
-  <mat-card>
+  <mat-card style="width: 20em;">
     <mat-card-content>
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <h2>Log In</h2>
@@ -8,7 +8,7 @@
           </mat-error>
         </span>
         <p>
-          <mat-form-field class="full-width-input">
+          <mat-form-field class="full-width-input" style="width: 100%;">
             <input matInput placeholder="Username" formControlName="username" required>
             <mat-error>
               Please provide a valid username
@@ -16,7 +16,7 @@
           </mat-form-field>
         </p>
         <p>
-          <mat-form-field class="full-width-input">
+          <mat-form-field class="full-width-input" style="width: 100%;">
             <input matInput type="password" placeholder="Password" formControlName="password" required>
             <mat-error>
               Please provide a valid password
