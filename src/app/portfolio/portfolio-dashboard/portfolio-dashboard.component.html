@@ -2,7 +2,7 @@
 <mat-spinner *ngIf="isloading"></mat-spinner>
 
 
-<table mat-table [dataSource]="data" class="mat-elevation-z8"  style="width: 75%;">
+<table *ngIf="!isloading" mat-table [dataSource]="data" class="mat-elevation-z8"  style="width: 75%;" id="portfolioTable">
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>

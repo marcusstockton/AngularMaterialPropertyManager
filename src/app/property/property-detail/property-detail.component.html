@@ -1,4 +1,4 @@
-<div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+<div id="propertyDetailsCards">
     <mat-card *ngIf="propertyDetails?.address" style="max-width: 200px;">
         <mat-card-header>
             <mat-card-title>Address</mat-card-title>
@@ -21,9 +21,17 @@
 
         </mat-card-header>
         <mat-card-content>
-            <p>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</p>
+            <dl>
+                <dt>Purchase Price</dt>
+                <dd>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</dd>
+                <dt>Purchase Date</dt>
+                <dd>{{propertyDetails?.purchaseDate | date:'medium'}}</dd>
+                <dt>Property Value</dt>
+                <dd>{{propertyDetails?.propertyValue| currency : 'GBP'}}</dd>
+            </dl>
+            <!-- <p>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</p>
             <p>{{propertyDetails?.purchaseDate | date:'medium'}}</p>
-            <p>{{propertyDetails?.propertyValue| currency : 'GBP'}}</p>
+            <p>{{propertyDetails?.propertyValue| currency : 'GBP'}}</p> -->
         </mat-card-content>
     </mat-card>
 
@@ -35,9 +43,18 @@
             </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <p>{{propertyDetails?.description}}</p>
+            <dl>
+                <dt>Description</dt>
+                <dd>{{propertyDetails?.description}}</dd>
+             
+                <dt>noOfBeds</dt>
+                <dt>{{propertyDetails?.noOfBeds}}</dt>
+                <dt>rentalPrice</dt>
+                <dd>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</dd>
+            </dl>
+            <!-- <p>{{propertyDetails?.description}}</p>
             <p>{{propertyDetails?.noOfBeds}}</p>
-            <p>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</p>
+            <p>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</p> -->
         </mat-card-content>
 
     </mat-card>
