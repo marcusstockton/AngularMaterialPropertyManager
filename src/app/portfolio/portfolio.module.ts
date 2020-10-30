@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortfolioListItemComponent } from './portfolio-list-item/portfolio-list-item.component';
 import { PortfolioDetailComponent } from './portfolio-detail/portfolio-detail.component';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
 import { PortfolioDashboardComponent } from './portfolio-dashboard/portfolio-dashboard.component';
@@ -11,7 +10,7 @@ import {PropertyModule} from '../property/property.module';
 import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'portfolio', children:[
+  { path: 'portfolio', children: [
     { path: '', component: PortfolioDashboardComponent, canActivate: [AuthGuard] },
     { path: 'create', component: PortfolioFormComponent, canActivate: [AuthGuard] },
     { path: ':portfolioid', component: PortfolioDetailComponent, canActivate: [AuthGuard] },
@@ -22,7 +21,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     PortfolioDashboardComponent,
-    PortfolioListItemComponent,
     PortfolioDetailComponent,
     PortfolioFormComponent
   ],

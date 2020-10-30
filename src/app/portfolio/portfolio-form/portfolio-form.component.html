@@ -5,5 +5,7 @@
         <input matInput formControlName="name">
       </mat-form-field>
 
-    <button type="submit" [disabled]="!portfolioForm.valid">Submit</button>
+    
+    <button mat-raised-button color="primary" type="submit" [disabled]="!portfolioForm.valid">Submit</button>
 </form>
+<button mat-raised-button (click)="backClicked()">Back</button>

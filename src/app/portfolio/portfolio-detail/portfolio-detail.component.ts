@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PortfolioService } from '../portfolio.service';
 import { PortfolioDetailDto } from 'src/app/portfolio/models/portfolioDetailDto';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-portfolio-detail',
@@ -17,7 +18,8 @@ export class PortfolioDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private portfolioService: PortfolioService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _location: Location
   ) {
     this.portfolioId = this.activatedRoute.snapshot.params.portfolioid;
 
@@ -33,4 +35,7 @@ export class PortfolioDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  backClicked() {
+    this._location.back();
+  }
 }

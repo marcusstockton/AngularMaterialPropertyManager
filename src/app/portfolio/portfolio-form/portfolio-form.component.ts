@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PortfolioDetailDto } from 'src/app/portfolio/models/portfolioDetailDto';
 import { PortfolioService } from '../portfolio.service';
 import { PortfolioCreateDto } from 'src/app/portfolio/models/portfolioCreate';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-portfolio-form',
@@ -15,7 +16,7 @@ export class PortfolioFormComponent implements OnInit {
   portfolioId: string;
   portfolio: PortfolioDetailDto;
 
-  constructor(private activatedRoute: ActivatedRoute, private portfolioService: PortfolioService) {
+  constructor(private activatedRoute: ActivatedRoute, private portfolioService: PortfolioService, private _location: Location) {
     this.portfolioForm = new FormGroup({
       name: new FormControl(''),
     });
@@ -54,5 +55,9 @@ export class PortfolioFormComponent implements OnInit {
 
     // TODO: Use EventEmitter with form value
     console.warn(this.portfolioForm.value);
+  }
+
+  backClicked() {
+    this._location.back();
   }
 }

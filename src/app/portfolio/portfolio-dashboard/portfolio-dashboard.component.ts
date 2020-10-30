@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../../portfolio/portfolio.service';
 import { PortfolioListItemDto } from 'src/app/portfolio/models/PortfolioListItemDto';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio-dashboard',
@@ -10,8 +11,8 @@ import { PortfolioListItemDto } from 'src/app/portfolio/models/PortfolioListItem
 export class PortfolioDashboardComponent implements OnInit {
   data: PortfolioListItemDto[] = [];
   isloading = false;
-
-  constructor(private portfolioService: PortfolioService) { }
+  displayedColumns: string[] = ['name', 'createdDateTime', 'propertyCount'];
+  constructor(private portfolioService: PortfolioService, private router: Router, private route: ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.isloading = true;
@@ -20,7 +21,10 @@ export class PortfolioDashboardComponent implements OnInit {
       this.data = x;
     });
   }
-
+  viewPortfolio(row: PortfolioListItemDto): void {
+    console.log(row);
+    this.router.navigate(['/portfolio', row.id]);
+  }
 
 
 }
