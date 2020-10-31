@@ -1,19 +1,46 @@
 <div id="propertyDetailsCards">
-    <mat-card *ngIf="propertyDetails?.address" style="max-width: 200px;">
+    <mat-card *ngIf="propertyDetails?.address" style="max-width: 400px;">
         <mat-card-header>
             <mat-card-title>Address</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <p>{{propertyDetails?.address?.line1}} {{propertyDetails?.address?.line2}}
-                {{propertyDetails?.address?.line3}}
-            </p>
-            <p>{{propertyDetails?.address?.postCode}} </p>
-            <p>{{propertyDetails?.address?.town}} </p>
-            <p>{{propertyDetails?.address?.city}}</p>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Address</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.address?.line1}} {{propertyDetails?.address?.line2}} {{propertyDetails?.address?.line3}}</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Postcode</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.address?.postCode}}</p>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Town</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.address?.town}}</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">City</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.address?.city}}</p>
+                </div>
+            </div>
         </mat-card-content>
     </mat-card>
 
-    <mat-card style="max-width: 200px;">
+    <mat-card style="max-width: 400px;">
         <mat-card-header>
             <mat-card-title>
                 Purchase Info
@@ -21,42 +48,92 @@
 
         </mat-card-header>
         <mat-card-content>
-            <dl>
-                <dt>Purchase Price</dt>
-                <dd>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</dd>
-                <dt>Purchase Date</dt>
-                <dd>{{propertyDetails?.purchaseDate | date:'medium'}}</dd>
-                <dt>Property Value</dt>
-                <dd>{{propertyDetails?.propertyValue| currency : 'GBP'}}</dd>
-            </dl>
-            <!-- <p>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</p>
-            <p>{{propertyDetails?.purchaseDate | date:'medium'}}</p>
-            <p>{{propertyDetails?.propertyValue| currency : 'GBP'}}</p> -->
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Purchase Price</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Purchase Date</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.purchaseDate | date:'medium'}}</p>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Property Value</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.propertyValue| currency : 'GBP'}}</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Purchase Price</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.purchasePrice| currency : 'GBP'}}</p>
+                </div>
+            </div>
         </mat-card-content>
     </mat-card>
 
 
-    <mat-card style="max-width: 200px;">
+    <mat-card style="max-width: 400px;">
         <mat-card-header>
             <mat-card-title>
                 Details
             </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <dl>
-                <dt>Description</dt>
-                <dd>{{propertyDetails?.description}}</dd>
-             
-                <dt>noOfBeds</dt>
-                <dt>{{propertyDetails?.noOfBeds}}</dt>
-                <dt>rentalPrice</dt>
-                <dd>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</dd>
-            </dl>
-            <!-- <p>{{propertyDetails?.description}}</p>
-            <p>{{propertyDetails?.noOfBeds}}</p>
-            <p>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</p> -->
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Description</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.description}}</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">No Of Beds</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.noOfBeds}}</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <p class="label">Rental Price per month</p>
+                </div>
+                <div class='column'>
+                    <p>{{propertyDetails?.rentalPrice| currency : 'GBP'}}</p>
+                </div>
+            </div>
         </mat-card-content>
 
     </mat-card>
 
 </div>
+<!-- 
+<h1>DEMO CRAP</h1>
+<div class='some-page-wrapper'>
+    <div class='row'>
+        <div class='column'>
+            <div class='blue-column'>
+                Some Text in Column One
+            </div>
+        </div>
+        <div class='column'>
+            <div class='green-column'>
+                Some Text in Column Two
+            </div>
+        </div>
+    </div>
+</div> -->

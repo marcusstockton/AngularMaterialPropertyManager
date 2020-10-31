@@ -6,7 +6,7 @@ import { PortfolioDashboardComponent } from './portfolio-dashboard/portfolio-das
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule, Routes } from '@angular/router';
-import {PropertyModule} from '../property/property.module';
+import { PropertyModule } from '../property/property.module';
 import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
