@@ -7,6 +7,8 @@ import { PropertyFormComponent } from './property-form/property-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { RouterModule, Routes } from '@angular/router';
+import { TenantModule } from '../tenant/tenant.module';
+import { TenantListComponent } from '../tenant/tenant-list/tenant-list.component';
 
 const routes: Routes = [
   { path: 'properties', children: [
@@ -23,11 +25,13 @@ const routes: Routes = [
     PropertyDashboardComponent,
     PropertyDetailComponent,
     PropertyListItemComponent,
-    PropertyFormComponent],
+    PropertyFormComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
+    TenantModule,
     MaterialModule
   ],
   exports: [

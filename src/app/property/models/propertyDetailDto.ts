@@ -1,4 +1,4 @@
-import { Tenant_DetailDto } from "../../models/tenantDetailDto";
+import { Tenant_DetailDto } from '../../tenant/models/tenantDetailDto';
 import { AddressDetailsDto } from '../../models/addressDetailsDto';
 export class PropertyDetailDto {
     public id: string;

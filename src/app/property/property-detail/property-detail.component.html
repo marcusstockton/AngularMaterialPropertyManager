@@ -117,10 +117,22 @@
                 </div>
             </div>
         </mat-card-content>
-
     </mat-card>
-
 </div>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Tenants
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <app-tenant-list [tenantList]=propertyDetails?.tenants></app-tenant-list>
+    </mat-card-content>
+</mat-card>
+
+
+<!-- <p>{{propertyDetails | json}}</p> -->
 <!-- 
 <h1>DEMO CRAP</h1>
 <div class='some-page-wrapper'>

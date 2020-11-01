@@ -14,6 +14,7 @@ import { PortfolioModule } from './portfolio/portfolio.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { PropertyModule } from './property/property.module';
+import { TenantModule } from './tenant/tenant.module';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
 
@@ -34,6 +35,7 @@ import { CommonModule } from '@angular/common';
     AuthModule,
     PortfolioModule,
     PropertyModule,
+    TenantModule,
     AppRoutingModule,
   ],
   providers: [

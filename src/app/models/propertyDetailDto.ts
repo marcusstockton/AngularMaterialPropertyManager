@@ -1,5 +1,5 @@
 import { AddressDetailsDto } from './addressDetailsDto';
-import { Tenant_DetailDto } from './tenantDetailDto';
+import { Tenant_DetailDto } from '../tenant/models/tenantDetailDto';
 
 export class PropertyDetailDto {
     public id: string;
